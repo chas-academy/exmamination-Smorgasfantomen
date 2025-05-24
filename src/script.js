@@ -46,7 +46,7 @@ function renderIncomes(){
     incomeList.innerHTML = "";
     for (let income of incomes){
         const li = document.createElement("li");
-        li.textContent = `Beskrivning: ${income.transDesc}, ${income.transAmount}kr`;
+        li.textContent = `${income.transDesc} - ${income.transAmount} kr (Inkomst)`;
         incomeList.appendChild(li);
     }
 }
@@ -56,7 +56,7 @@ function renderExpenses(){
     expenseList.innerHTML = "";
     for (let expense of expenses){
         const li = document.createElement("li");
-        li.textContent = `Beskrivning: ${expense.transDesc}, ${expense.transAmount}kr`;
+        li.textContent = `${expense.transDesc} - ${expense.transAmount} kr (Utgift)`;
         expenseList.appendChild(li);
     }
 }
@@ -66,7 +66,7 @@ function renderTransactions(){
     transactionList.innerHTML = "";
     for (let transaction of transactions){
         const li = document.createElement("li");
-        li.textContent = `Beskrivning: ${transaction.transDesc}, ${transaction.transAmount}kr, ${transaction.type}`;
+        li.textContent = `${transaction.transDesc} - ${transaction.transAmount} kr (${transaction.type})`;
         transactionList.appendChild(li);
     }
 }
