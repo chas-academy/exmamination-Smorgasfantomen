@@ -42,40 +42,37 @@ function addTransaction(isIncome){
 }
 
 function renderIncomes(){
-
-    incomeList.innerHTML = ""
-
+    if (!incomeList) return;
+    incomeList.innerHTML = "";
     for (let income of incomes){
-        const li = document.createElement("li")
-        li.textContent = `Beskrivning: ${income.transDesc}, ${income.transAmount}kr`
-        incomeList.appendChild(li)
+        const li = document.createElement("li");
+        li.textContent = `Beskrivning: ${income.transDesc}, ${income.transAmount}kr`;
+        incomeList.appendChild(li);
     }
 }
 
 function renderExpenses(){
-
-    expenseList.innerHTML = ""
-
+    if (!expenseList) return;
+    expenseList.innerHTML = "";
     for (let expense of expenses){
-        const li = document.createElement("li")
-        li.textContent = `Beskrivning: ${expense.transDesc}, ${expense.transAmount}kr`
-        expenseList.appendChild(li)
+        const li = document.createElement("li");
+        li.textContent = `Beskrivning: ${expense.transDesc}, ${expense.transAmount}kr`;
+        expenseList.appendChild(li);
     }
 }
 
 function renderTransactions(){
-
-    transactionList.innerHTML = ""
-
+    if (!transactionList) return;
+    transactionList.innerHTML = "";
     for (let transaction of transactions){
-        const li = document.createElement("li")
-        li.textContent = `Beskrivning: ${transaction.transDesc}, ${transaction.transAmount}kr, ${transaction.type}`
-        transactionList.appendChild(li)
+        const li = document.createElement("li");
+        li.textContent = `Beskrivning: ${transaction.transDesc}, ${transaction.transAmount}kr, ${transaction.type}`;
+        transactionList.appendChild(li);
     }
 }
 
 function renderBalance(){
-
+    if (!balance) return;
     let incomeSum = 0;
     let expenseSum = 0;
     for (let income of incomes){
